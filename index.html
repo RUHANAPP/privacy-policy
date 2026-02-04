@@ -43,6 +43,47 @@
             padding: 60px 24px 100px;
         }
 
+        /* Language Navigation */
+        .lang-nav {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 40px;
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 10, 0.95);
+            padding: 16px;
+            margin-left: -24px;
+            margin-right: -24px;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .lang-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .lang-btn:hover {
+            background: var(--cyan-light);
+            border-color: var(--cyan-border);
+            color: var(--cyan);
+        }
+
+        .lang-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
         /* Header */
         .header {
             text-align: center;
@@ -262,6 +303,31 @@
             height: 18px;
         }
 
+        /* Divider */
+        .language-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 80px 0;
+            gap: 20px;
+        }
+
+        .language-divider::before,
+        .language-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--cyan-border), transparent);
+        }
+
+        .language-divider span {
+            color: var(--cyan);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
         /* Footer */
         .footer {
             text-align: center;
@@ -281,6 +347,11 @@
                 padding: 40px 16px 80px;
             }
 
+            .lang-nav {
+                margin-left: -16px;
+                margin-right: -16px;
+            }
+
             .app-name {
                 font-size: 28px;
             }
@@ -297,226 +368,474 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <h1 class="app-name">RUHAN</h1>
-            <h2 class="page-title">Privacy Policy</h2>
-            <div class="last-updated">
+        <!-- Language Navigation -->
+        <nav class="lang-nav">
+            <a href="#english" class="lang-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                 </svg>
-                <span>Last Updated: February 2, 2026</span>
-            </div>
-        </header>
-
-        <!-- Introduction -->
-        <div class="intro-card">
-            <p><strong>RUHAN</strong> ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
-        </div>
-
-        <!-- Section 1: Information Stored Locally -->
-        <section class="section">
-            <div class="section-header">
+                English
+            </a>
+            <a href="#francais" class="lang-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                 </svg>
-                <h3 class="section-title">1. Information Stored Locally</h3>
-            </div>
-            <div class="section-content">
-                <p>The following data is stored only on your device and is never transmitted to our servers:</p>
-                <ul class="bullet-list">
-                    <li><span class="bullet"></span><span><strong>Location Data:</strong> Used solely to calculate prayer times and Qibla direction</span></li>
-                    <li><span class="bullet"></span><span><strong>Prayer Time Preferences:</strong> Calculation method, notifications, and display settings</span></li>
-                    <li><span class="bullet"></span><span><strong>Quran Reading Progress:</strong> Bookmarks and last read position</span></li>
-                    <li><span class="bullet"></span><span><strong>Notification Settings:</strong> Prayer alerts and Ramadan reminders</span></li>
-                    <li><span class="bullet"></span><span><strong>Cycle Tracker Data:</strong> Stored exclusively on your device, never transmitted</span></li>
-                    <li><span class="bullet"></span><span><strong>App Settings:</strong> Language, theme, and ad-free purchase status</span></li>
-                </ul>
-            </div>
-        </section>
+                Français
+            </a>
+        </nav>
 
-        <!-- Section 2: Third-Party Advertising -->
-        <section class="section">
-            <div class="section-header">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
-                </svg>
-                <h3 class="section-title">2. Third-Party Advertising</h3>
-            </div>
-            <div class="section-content">
-                <p>Our free version displays advertisements provided by Google AdMob. These services may collect:</p>
-                <ul class="bullet-list">
-                    <li><span class="bullet"></span><span><strong>Device Information:</strong> Device type, model, OS version, advertising ID</span></li>
-                    <li><span class="bullet"></span><span><strong>IP Address:</strong> Used to estimate general location for relevant ads</span></li>
-                    <li><span class="bullet"></span><span><strong>Ad Interaction Data:</strong> Ads you view or interact with</span></li>
-                    <li><span class="bullet"></span><span><strong>Crash Logs & Performance Data:</strong> For SDK improvement</span></li>
-                </ul>
-                <div class="highlight-box">
+        <!-- ============================================ -->
+        <!-- ENGLISH VERSION -->
+        <!-- ============================================ -->
+        <div id="english">
+            <!-- Header -->
+            <header class="header">
+                <h1 class="app-name">RUHAN</h1>
+                <h2 class="page-title">Privacy Policy</h2>
+                <div class="last-updated">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                    <p>You can remove all ads with a one-time in-app purchase. Ad-free users have no advertising data collected.</p>
+                    <span>Last Updated: February 2, 2026</span>
                 </div>
-                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="link-button">
-                    Google Privacy Policy
+            </header>
+
+            <!-- Introduction -->
+            <div class="intro-card">
+                <p><strong>RUHAN</strong> ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
+            </div>
+
+            <!-- Section 1: Information Stored Locally -->
+            <section class="section">
+                <div class="section-header">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
                     </svg>
-                </a>
-            </div>
-        </section>
+                    <h3 class="section-title">1. Information Stored Locally</h3>
+                </div>
+                <div class="section-content">
+                    <p>The following data is stored only on your device and is never transmitted to our servers:</p>
+                    <ul class="bullet-list">
+                        <li><span class="bullet"></span><span><strong>Location Data:</strong> Used solely to calculate prayer times and Qibla direction</span></li>
+                        <li><span class="bullet"></span><span><strong>Prayer Time Preferences:</strong> Calculation method, notifications, and display settings</span></li>
+                        <li><span class="bullet"></span><span><strong>Quran Reading Progress:</strong> Bookmarks and last read position</span></li>
+                        <li><span class="bullet"></span><span><strong>Notification Settings:</strong> Prayer alerts and Ramadan reminders</span></li>
+                        <li><span class="bullet"></span><span><strong>Cycle Tracker Data:</strong> Stored exclusively on your device, never transmitted</span></li>
+                        <li><span class="bullet"></span><span><strong>App Settings:</strong> Language, theme, and ad-free purchase status</span></li>
+                    </ul>
+                </div>
+            </section>
 
-        <!-- Section 3: App Tracking Transparency -->
-        <section class="section">
-            <div class="section-header">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
-                </svg>
-                <h3 class="section-title">3. App Tracking Transparency</h3>
-            </div>
-            <div class="section-content">
-                <p>When you first use the App, you will be asked whether you consent to personalized advertising through Apple's App Tracking Transparency (ATT) prompt.</p>
-                <ul class="bullet-list">
-                    <li><span class="bullet"></span><span><strong>If you ALLOW tracking:</strong> You may receive personalized ads</span></li>
-                    <li><span class="bullet"></span><span><strong>If you DENY tracking:</strong> You will receive non-personalized ads</span></li>
-                </ul>
-                <p>You can change this preference anytime in <strong>Settings → Privacy & Security → Tracking</strong>.</p>
-            </div>
-        </section>
-
-        <!-- Section 4: In-App Purchases -->
-        <section class="section">
-            <div class="section-header">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                </svg>
-                <h3 class="section-title">4. In-App Purchases</h3>
-            </div>
-            <div class="section-content">
-                <p>All payments are processed entirely by Apple through the App Store.</p>
-                <ul class="bullet-list">
-                    <li><span class="bullet"></span><span>We do <strong>NOT</strong> collect or have access to your payment information</span></li>
-                    <li><span class="bullet"></span><span>Your purchase history is managed by Apple</span></li>
-                    <li><span class="bullet"></span><span>Refunds are subject to Apple's refund policy</span></li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Section 5: Third-Party Services -->
-        <section class="section">
-            <div class="section-header">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                </svg>
-                <h3 class="section-title">5. Third-Party Services</h3>
-            </div>
-            <div class="section-content">
-                <p>Our App uses the following services to provide content:</p>
-                <ul class="bullet-list">
-                    <li><span class="bullet"></span><span><strong>AlQuran.cloud</strong> – Quran text and translations</span></li>
-                    <li><span class="bullet"></span><span><strong>MP3Quran.net</strong> – Surah audio recitations</span></li>
-                    <li><span class="bullet"></span><span><strong>EveryAyah.com</strong> – Verse-by-verse audio</span></li>
-                    <li><span class="bullet"></span><span><strong>PrayTimes.org</strong> – Adhan audio files</span></li>
-                </ul>
-                <p>These services only deliver content to your device and do not receive personal data from you.</p>
-            </div>
-        </section>
-
-        <!-- Section 6: Location Services -->
-        <section class="section">
-            <div class="section-header">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <h3 class="section-title">6. Location Services</h3>
-            </div>
-            <div class="section-content">
-                <p>The App requests location access to:</p>
-                <ul class="bullet-list">
-                    <li><span class="bullet"></span><span>Calculate accurate prayer times</span></li>
-                    <li><span class="bullet"></span><span>Determine Qibla direction</span></li>
-                </ul>
-                <p>Your location data is processed on your device and can be disabled anytime. You may also manually enter your location.</p>
-            </div>
-        </section>
-
-        <!-- Section 7: Data Retention & Deletion -->
-        <section class="section">
-            <div class="section-header">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                </svg>
-                <h3 class="section-title">7. Data Retention & Deletion</h3>
-            </div>
-            <div class="section-content">
-                <p>Since all personal data is stored locally:</p>
-                <ul class="bullet-list">
-                    <li><span class="bullet"></span><span>Uninstalling the App deletes all associated data</span></li>
-                    <li><span class="bullet"></span><span>You can clear App data through your device settings</span></li>
-                    <li><span class="bullet"></span><span>Reset your Advertising ID in <strong>Settings → Privacy → Advertising</strong></span></li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Section 8: Children's Privacy -->
-        <section class="section">
-            <div class="section-header">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-                <h3 class="section-title">8. Children's Privacy</h3>
-            </div>
-            <div class="section-content">
-                <p>Our App is designed for users of all ages and contains Islamic religious content suitable for families. We do not knowingly serve personalized ads to children under 13.</p>
-            </div>
-        </section>
-
-        <!-- Section 9: Your Rights -->
-        <section class="section">
-            <div class="section-header">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <h3 class="section-title">9. Your Rights</h3>
-            </div>
-            <div class="section-content">
-                <p>Under GDPR, CCPA, and other privacy laws, you have the right to:</p>
-                <ul class="bullet-list">
-                    <li><span class="bullet"></span><span>Access your data (stored locally on your device)</span></li>
-                    <li><span class="bullet"></span><span>Delete your data (by uninstalling the App)</span></li>
-                    <li><span class="bullet"></span><span>Opt-out of personalized advertising</span></li>
-                    <li><span class="bullet"></span><span>Disable location services</span></li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Section 10: Contact Us -->
-        <section class="section">
-            <div class="section-header">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <h3 class="section-title">10. Contact Us</h3>
-            </div>
-            <div class="section-content">
-                <p>If you have any questions about this Privacy Policy, please contact us:</p>
-                <div class="contact-card">
-                    <p class="contact-name">RUHAN</p>
-                    <p class="contact-location">Luxembourg</p>
-                    <a href="mailto:ruhanpro@proton.me" class="email-button">
+            <!-- Section 2: Third-Party Advertising -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                    </svg>
+                    <h3 class="section-title">2. Third-Party Advertising</h3>
+                </div>
+                <div class="section-content">
+                    <p>Our free version displays advertisements provided by Google AdMob. These services may collect:</p>
+                    <ul class="bullet-list">
+                        <li><span class="bullet"></span><span><strong>Device Information:</strong> Device type, model, OS version, advertising ID</span></li>
+                        <li><span class="bullet"></span><span><strong>IP Address:</strong> Used to estimate general location for relevant ads</span></li>
+                        <li><span class="bullet"></span><span><strong>Ad Interaction Data:</strong> Ads you view or interact with</span></li>
+                        <li><span class="bullet"></span><span><strong>Crash Logs & Performance Data:</strong> For SDK improvement</span></li>
+                    </ul>
+                    <div class="highlight-box">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
-                        ruhanpro@proton.me
+                        <p>You can remove all ads with a one-time in-app purchase. Ad-free users have no advertising data collected.</p>
+                    </div>
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="link-button">
+                        Google Privacy Policy
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
                     </a>
                 </div>
+            </section>
+
+            <!-- Section 3: App Tracking Transparency -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+                    </svg>
+                    <h3 class="section-title">3. App Tracking Transparency</h3>
+                </div>
+                <div class="section-content">
+                    <p>When you first use the App, you will be asked whether you consent to personalized advertising through Apple's App Tracking Transparency (ATT) prompt.</p>
+                    <ul class="bullet-list">
+                        <li><span class="bullet"></span><span><strong>If you ALLOW tracking:</strong> You may receive personalized ads</span></li>
+                        <li><span class="bullet"></span><span><strong>If you DENY tracking:</strong> You will receive non-personalized ads</span></li>
+                    </ul>
+                    <p>You can change this preference anytime in <strong>Settings → Privacy & Security → Tracking</strong>.</p>
+                </div>
+            </section>
+
+            <!-- Section 4: In-App Purchases -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                    </svg>
+                    <h3 class="section-title">4. In-App Purchases</h3>
+                </div>
+                <div class="section-content">
+                    <p>All payments are processed entirely by Apple through the App Store.</p>
+                    <ul class="bullet-list">
+                        <li><span class="bullet"></span><span>We do <strong>NOT</strong> collect or have access to your payment information</span></li>
+                        <li><span class="bullet"></span><span>Your purchase history is managed by Apple</span></li>
+                        <li><span class="bullet"></span><span>Refunds are subject to Apple's refund policy</span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 5: Third-Party Services -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                    </svg>
+                    <h3 class="section-title">5. Third-Party Services</h3>
+                </div>
+                <div class="section-content">
+                    <p>Our App uses the following services to provide content:</p>
+                    <ul class="bullet-list">
+                        <li><span class="bullet"></span><span><strong>AlQuran.cloud</strong> – Quran text and translations</span></li>
+                        <li><span class="bullet"></span><span><strong>MP3Quran.net</strong> – Surah audio recitations</span></li>
+                        <li><span class="bullet"></span><span><strong>EveryAyah.com</strong> – Verse-by-verse audio</span></li>
+                        <li><span class="bullet"></span><span><strong>PrayTimes.org</strong> – Adhan audio files</span></li>
+                    </ul>
+                    <p>These services only deliver content to your device and do not receive personal data from you.</p>
+                </div>
+            </section>
+
+            <!-- Section 6: Location Services -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <h3 class="section-title">6. Location Services</h3>
+                </div>
+                <div class="section-content">
+                    <p>The App requests location access to:</p>
+                    <ul class="bullet-list">
+                        <li><span class="bullet"></span><span>Calculate accurate prayer times</span></li>
+                        <li><span class="bullet"></span><span>Determine Qibla direction</span></li>
+                    </ul>
+                    <p>Your location data is processed on your device and can be disabled anytime. You may also manually enter your location.</p>
+                </div>
+            </section>
+
+            <!-- Section 7: Data Retention & Deletion -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    </svg>
+                    <h3 class="section-title">7. Data Retention & Deletion</h3>
+                </div>
+                <div class="section-content">
+                    <p>Since all personal data is stored locally:</p>
+                    <ul class="bullet-list">
+                        <li><span class="bullet"></span><span>Uninstalling the App deletes all associated data</span></li>
+                        <li><span class="bullet"></span><span>You can clear App data through your device settings</span></li>
+                        <li><span class="bullet"></span><span>Reset your Advertising ID in <strong>Settings → Privacy → Advertising</strong></span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 8: Children's Privacy -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <h3 class="section-title">8. Children's Privacy</h3>
+                </div>
+                <div class="section-content">
+                    <p>Our App is designed for users of all ages and contains Islamic religious content suitable for families. We do not knowingly serve personalized ads to children under 13.</p>
+                </div>
+            </section>
+
+            <!-- Section 9: Your Rights -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h3 class="section-title">9. Your Rights</h3>
+                </div>
+                <div class="section-content">
+                    <p>Under GDPR, CCPA, and other privacy laws, you have the right to:</p>
+                    <ul class="bullet-list">
+                        <li><span class="bullet"></span><span>Access your data (stored locally on your device)</span></li>
+                        <li><span class="bullet"></span><span>Delete your data (by uninstalling the App)</span></li>
+                        <li><span class="bullet"></span><span>Opt-out of personalized advertising</span></li>
+                        <li><span class="bullet"></span><span>Disable location services</span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 10: Contact Us -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <h3 class="section-title">10. Contact Us</h3>
+                </div>
+                <div class="section-content">
+                    <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                    <div class="contact-card">
+                        <p class="contact-name">RUHAN</p>
+                        <p class="contact-location">Luxembourg</p>
+                        <a href="mailto:ruhanpro@proton.me" class="email-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            ruhanpro@proton.me
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Language Divider -->
+        <div class="language-divider" id="francais">
+            <span>Français</span>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- VERSION FRANÇAISE -->
+        <!-- ============================================ -->
+        <div>
+            <!-- Header -->
+            <header class="header">
+                <h1 class="app-name">RUHAN</h1>
+                <h2 class="page-title">Politique de Confidentialité</h2>
+                <div class="last-updated">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <span>Dernière mise à jour : 2 février 2026</span>
+                </div>
+            </header>
+
+            <!-- Introduction -->
+            <div class="intro-card">
+                <p><strong>RUHAN</strong> (« nous », « notre » ou « nos ») s'engage à protéger votre vie privée. Cette Politique de Confidentialité explique comment nous collectons, utilisons et protégeons vos informations lorsque vous utilisez notre application mobile.</p>
             </div>
-        </section>
+
+            <!-- Section 1: Informations stockées localement -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                    <h3 class="section-title">1. Informations stockées localement</h3>
+                </div>
+                <div class="section-content">
+                    <p>Les données suivantes sont stockées uniquement sur votre appareil et ne sont jamais transmises à nos serveurs :</p>
+                    <ul class="bullet-list">
+                        <li><span class="bullet"></span><span><strong>Données de localisation :</strong> Utilisées uniquement pour calculer les heures de prière et la direction de la Qibla</span></li>
+                        <li><span class="bullet"></span><span><strong>Préférences des heures de prière :</strong> Méthode de calcul, notifications et paramètres d'affichage</span></li>
+                        <li><span class="bullet"></span><span><strong>Progression de lecture du Coran :</strong> Signets et dernière position de lecture</span></li>
+                        <li><span class="bullet"></span><span><strong>Paramètres de notification :</strong> Alertes de prière et rappels du Ramadan</span></li>
+                        <li><span class="bullet"></span><span><strong>Données du suivi de cycle :</strong> Stockées exclusivement sur votre appareil, jamais transmises</span></li>
+                        <li><span class="bullet"></span><span><strong>Paramètres de l'application :</strong> Langue, thème et statut d'achat sans publicité</span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 2: Publicité tierce -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                    </svg>
+                    <h3 class="section-title">2. Publicité tierce</h3>
+                </div>
+                <div class="section-content">
+                    <p>Notre version gratuite affiche des publicités fournies par Google AdMob. Ces services peuvent collecter :</p>
+                    <ul class="bullet-list">
+                        <li><span class="bullet"></span><span><strong>Informations sur l'appareil :</strong> Type d'appareil, modèle, version du système d'exploitation, identifiant publicitaire</span></li>
+                        <li><span class="bullet"></span><span><strong>Adresse IP :</strong> Utilisée pour estimer la localisation générale pour des publicités pertinentes</span></li>
+                        <li><span class="bullet"></span><span><strong>Données d'interaction publicitaire :</strong> Publicités que vous consultez ou avec lesquelles vous interagissez</span></li>
+                        <li><span class="bullet"></span><span><strong>Journaux de plantage et données de performance :</strong> Pour l'amélioration du SDK</span></li>
+                    </ul>
+                    <div class="highlight-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        <p>Vous pouvez supprimer toutes les publicités avec un achat unique intégré. Les utilisateurs sans publicité n'ont aucune donnée publicitaire collectée.</p>
+                    </div>
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="link-button">
+                        Politique de confidentialité de Google
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Section 3: Transparence du suivi des applications -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+                    </svg>
+                    <h3 class="section-title">3. Transparence du suivi des applications</h3>
+                </div>
+                <div class="section-content">
+                    <p>Lors de votre première utilisation de l'application, il vous sera demandé si vous consentez à la publicité personnalisée via la demande de transparence du suivi des applications (ATT) d'Apple.</p>
+                    <ul class="bullet-list">
+                        <li><span class="bullet"></span><span><strong>Si vous AUTORISEZ le suivi :</strong> Vous pourrez recevoir des publicités personnalisées</span></li>
+                        <li><span class="bullet"></span><span><strong>Si vous REFUSEZ le suivi :</strong> Vous recevrez des publicités non personnalisées</span></li>
+                    </ul>
+                    <p>Vous pouvez modifier cette préférence à tout moment dans <strong>Réglages → Confidentialité et sécurité → Suivi</strong>.</p>
+                </div>
+            </section>
+
+            <!-- Section 4: Achats intégrés -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                    </svg>
+                    <h3 class="section-title">4. Achats intégrés</h3>
+                </div>
+                <div class="section-content">
+                    <p>Tous les paiements sont traités entièrement par Apple via l'App Store.</p>
+                    <ul class="bullet-list">
+                        <li><span class="bullet"></span><span>Nous ne collectons <strong>PAS</strong> et n'avons pas accès à vos informations de paiement</span></li>
+                        <li><span class="bullet"></span><span>Votre historique d'achats est géré par Apple</span></li>
+                        <li><span class="bullet"></span><span>Les remboursements sont soumis à la politique de remboursement d'Apple</span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 5: Services tiers -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                    </svg>
+                    <h3 class="section-title">5. Services tiers</h3>
+                </div>
+                <div class="section-content">
+                    <p>Notre application utilise les services suivants pour fournir du contenu :</p>
+                    <ul class="bullet-list">
+                        <li><span class="bullet"></span><span><strong>AlQuran.cloud</strong> – Texte et traductions du Coran</span></li>
+                        <li><span class="bullet"></span><span><strong>MP3Quran.net</strong> – Récitations audio des sourates</span></li>
+                        <li><span class="bullet"></span><span><strong>EveryAyah.com</strong> – Audio verset par verset</span></li>
+                        <li><span class="bullet"></span><span><strong>PrayTimes.org</strong> – Fichiers audio de l'Adhan</span></li>
+                    </ul>
+                    <p>Ces services ne font que livrer du contenu à votre appareil et ne reçoivent pas de données personnelles de votre part.</p>
+                </div>
+            </section>
+
+            <!-- Section 6: Services de localisation -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <h3 class="section-title">6. Services de localisation</h3>
+                </div>
+                <div class="section-content">
+                    <p>L'application demande l'accès à la localisation pour :</p>
+                    <ul class="bullet-list">
+                        <li><span class="bullet"></span><span>Calculer les heures de prière précises</span></li>
+                        <li><span class="bullet"></span><span>Déterminer la direction de la Qibla</span></li>
+                    </ul>
+                    <p>Vos données de localisation sont traitées sur votre appareil et peuvent être désactivées à tout moment. Vous pouvez également entrer manuellement votre localisation.</p>
+                </div>
+            </section>
+
+            <!-- Section 7: Conservation et suppression des données -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    </svg>
+                    <h3 class="section-title">7. Conservation et suppression des données</h3>
+                </div>
+                <div class="section-content">
+                    <p>Puisque toutes les données personnelles sont stockées localement :</p>
+                    <ul class="bullet-list">
+                        <li><span class="bullet"></span><span>La désinstallation de l'application supprime toutes les données associées</span></li>
+                        <li><span class="bullet"></span><span>Vous pouvez effacer les données de l'application via les paramètres de votre appareil</span></li>
+                        <li><span class="bullet"></span><span>Réinitialisez votre identifiant publicitaire dans <strong>Réglages → Confidentialité → Publicité</strong></span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 8: Confidentialité des enfants -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <h3 class="section-title">8. Confidentialité des enfants</h3>
+                </div>
+                <div class="section-content">
+                    <p>Notre application est conçue pour les utilisateurs de tous âges et contient du contenu religieux islamique adapté aux familles. Nous ne diffusons pas sciemment de publicités personnalisées aux enfants de moins de 13 ans.</p>
+                </div>
+            </section>
+
+            <!-- Section 9: Vos droits -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h3 class="section-title">9. Vos droits</h3>
+                </div>
+                <div class="section-content">
+                    <p>En vertu du RGPD, du CCPA et d'autres lois sur la protection de la vie privée, vous avez le droit de :</p>
+                    <ul class="bullet-list">
+                        <li><span class="bullet"></span><span>Accéder à vos données (stockées localement sur votre appareil)</span></li>
+                        <li><span class="bullet"></span><span>Supprimer vos données (en désinstallant l'application)</span></li>
+                        <li><span class="bullet"></span><span>Refuser la publicité personnalisée</span></li>
+                        <li><span class="bullet"></span><span>Désactiver les services de localisation</span></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 10: Nous contacter -->
+            <section class="section">
+                <div class="section-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <h3 class="section-title">10. Nous contacter</h3>
+                </div>
+                <div class="section-content">
+                    <p>Si vous avez des questions concernant cette Politique de Confidentialité, veuillez nous contacter :</p>
+                    <div class="contact-card">
+                        <p class="contact-name">RUHAN</p>
+                        <p class="contact-location">Luxembourg</p>
+                        <a href="mailto:ruhanpro@proton.me" class="email-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            ruhanpro@proton.me
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
 
         <!-- Footer -->
         <footer class="footer">
-            <p>© 2026 RUHAN. All rights reserved.</p>
+            <p>© 2026 RUHAN. All rights reserved. / Tous droits réservés.</p>
         </footer>
     </div>
 </body>
