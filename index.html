@@ -1,0 +1,2290 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="RUHAN Privacy Policy - Learn how we protect your privacy and handle your data."
+    />
+    <meta name="theme-color" content="#00CED1" />
+    <title>RUHAN — Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ============================================
+           CSS RESET & BASE
+           ============================================ */
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --cyan: #00ced1;
+        --cyan-light: rgba(0, 206, 209, 0.1);
+        --cyan-border: rgba(0, 206, 209, 0.2);
+        --cyan-glow: rgba(0, 206, 209, 0.05);
+        --bg-primary: #0a0a0f;
+        --bg-secondary: #0f0f18;
+        --bg-card: rgba(255, 255, 255, 0.03);
+        --bg-card-hover: rgba(255, 255, 255, 0.05);
+        --border-subtle: rgba(255, 255, 255, 0.05);
+        --border-hover: rgba(255, 255, 255, 0.1);
+        --text-primary: #ffffff;
+        --text-secondary: rgba(255, 255, 255, 0.7);
+        --text-tertiary: rgba(255, 255, 255, 0.4);
+        --font:
+          "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --radius-sm: 8px;
+        --radius-md: 12px;
+        --radius-lg: 16px;
+        --radius-xl: 20px;
+        --shadow-glow: 0 0 40px rgba(0, 206, 209, 0.06);
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      html {
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        font-family: var(--font);
+        background-color: var(--bg-primary);
+        color: var(--text-secondary);
+        line-height: 1.7;
+        font-weight: 300;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      /* ============================================
+           BACKGROUND & AMBIENT EFFECTS
+           ============================================ */
+      .bg-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+      }
+
+      .bg-gradient {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background:
+          radial-gradient(
+            ellipse 80% 50% at 50% -20%,
+            rgba(0, 206, 209, 0.08),
+            transparent
+          ),
+          radial-gradient(
+            ellipse 60% 40% at 80% 60%,
+            rgba(0, 206, 209, 0.03),
+            transparent
+          ),
+          radial-gradient(
+            ellipse 50% 30% at 20% 80%,
+            rgba(0, 80, 120, 0.05),
+            transparent
+          ),
+          linear-gradient(
+            180deg,
+            var(--bg-primary) 0%,
+            var(--bg-secondary) 50%,
+            var(--bg-primary) 100%
+          );
+      }
+
+      .bg-noise {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.02;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      }
+
+      .floating-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        animation: floatOrb 20s ease-in-out infinite;
+      }
+
+      .floating-orb-1 {
+        width: 400px;
+        height: 400px;
+        background: rgba(0, 206, 209, 0.04);
+        top: 10%;
+        right: -10%;
+        animation-delay: 0s;
+      }
+
+      .floating-orb-2 {
+        width: 300px;
+        height: 300px;
+        background: rgba(0, 100, 150, 0.03);
+        bottom: 20%;
+        left: -5%;
+        animation-delay: -7s;
+      }
+
+      .floating-orb-3 {
+        width: 250px;
+        height: 250px;
+        background: rgba(0, 206, 209, 0.02);
+        top: 50%;
+        left: 50%;
+        animation-delay: -14s;
+      }
+
+      @keyframes floatOrb {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        25% {
+          transform: translate(30px, -20px) scale(1.05);
+        }
+        50% {
+          transform: translate(-20px, 30px) scale(0.95);
+        }
+        75% {
+          transform: translate(10px, 10px) scale(1.02);
+        }
+      }
+
+      /* ============================================
+           SCROLL PROGRESS BAR
+           ============================================ */
+      .scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: linear-gradient(90deg, var(--cyan), rgba(0, 206, 209, 0.4));
+        z-index: 1000;
+        transition: width 0.1s linear;
+        box-shadow: 0 0 10px rgba(0, 206, 209, 0.3);
+      }
+
+      /* ============================================
+           LANGUAGE SWITCHER
+           ============================================ */
+      .lang-switcher {
+        position: fixed;
+        top: 24px;
+        right: 24px;
+        z-index: 999;
+        display: flex;
+        gap: 4px;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid var(--border-subtle);
+        border-radius: 50px;
+        padding: 4px;
+      }
+
+      .lang-btn {
+        padding: 8px 18px;
+        border: none;
+        border-radius: 50px;
+        background: transparent;
+        color: var(--text-tertiary);
+        font-family: var(--font);
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .lang-btn.active {
+        background: var(--cyan);
+        color: var(--bg-primary);
+      }
+
+      .lang-btn:hover:not(.active) {
+        color: var(--text-primary);
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      /* ============================================
+           MAIN CONTAINER
+           ============================================ */
+      .container {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 80px 24px 100px;
+        position: relative;
+      }
+
+      /* ============================================
+           HEADER
+           ============================================ */
+      .header {
+        text-align: center;
+        margin-bottom: 60px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 0.8s ease forwards;
+      }
+
+      .header-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 20px;
+        background: var(--cyan-light);
+        border: 1px solid var(--cyan-border);
+        border-radius: 50px;
+        margin-bottom: 32px;
+      }
+
+      .header-badge svg {
+        width: 14px;
+        height: 14px;
+        fill: var(--cyan);
+      }
+
+      .header-badge span {
+        font-size: 13px;
+        color: var(--cyan);
+        font-weight: 500;
+        letter-spacing: 0.3px;
+      }
+
+      .header h1 {
+        font-size: clamp(32px, 5vw, 44px);
+        font-weight: 300;
+        color: var(--text-primary);
+        letter-spacing: -0.5px;
+        margin-bottom: 8px;
+        line-height: 1.2;
+      }
+
+      .header h1 span {
+        color: var(--cyan);
+        font-weight: 500;
+      }
+
+      .header-subtitle {
+        font-size: 16px;
+        color: var(--text-tertiary);
+        font-weight: 300;
+      }
+
+      .last-updated {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 24px;
+        padding: 6px 16px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 50px;
+        border: 1px solid var(--border-subtle);
+      }
+
+      .last-updated svg {
+        width: 14px;
+        height: 14px;
+        stroke: var(--text-tertiary);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .last-updated span {
+        font-size: 13px;
+        color: var(--text-tertiary);
+        font-weight: 400;
+      }
+
+      /* ============================================
+           TABLE OF CONTENTS
+           ============================================ */
+      .toc {
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-lg);
+        padding: 32px;
+        margin-bottom: 48px;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 0.8s ease 0.1s forwards;
+      }
+
+      .toc-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-primary);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 20px;
+      }
+
+      .toc-title::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--border-subtle);
+      }
+
+      .toc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 6px;
+      }
+
+      .toc-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: var(--radius-sm);
+        text-decoration: none;
+        color: var(--text-secondary);
+        font-size: 14px;
+        font-weight: 400;
+        transition: var(--transition);
+      }
+
+      .toc-link:hover {
+        background: rgba(0, 206, 209, 0.05);
+        color: var(--cyan);
+        transform: translateX(4px);
+      }
+
+      .toc-number {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 6px;
+        background: var(--cyan-light);
+        color: var(--cyan);
+        font-size: 11px;
+        font-weight: 600;
+        flex-shrink: 0;
+      }
+
+      /* ============================================
+           INTRO CARD
+           ============================================ */
+      .intro-card {
+        background: var(--cyan-light);
+        border: 1px solid var(--cyan-border);
+        border-radius: var(--radius-lg);
+        padding: 32px;
+        margin-bottom: 48px;
+        position: relative;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 0.8s ease 0.2s forwards;
+      }
+
+      .intro-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(
+          180deg,
+          var(--cyan),
+          rgba(0, 206, 209, 0.2)
+        );
+        border-radius: 4px 0 0 4px;
+      }
+
+      .intro-card p {
+        font-size: 15px;
+        line-height: 1.8;
+        color: var(--text-secondary);
+        padding-left: 16px;
+      }
+
+      .intro-card strong {
+        color: var(--cyan);
+        font-weight: 500;
+      }
+
+      /* ============================================
+           SECTIONS
+           ============================================ */
+      .section {
+        margin-bottom: 32px;
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      .section.visible {
+        animation: fadeUp 0.6s ease forwards;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+        cursor: pointer;
+        padding: 4px 0;
+      }
+
+      .section-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        background: var(--cyan-light);
+        border: 1px solid var(--cyan-border);
+        flex-shrink: 0;
+        transition: var(--transition);
+      }
+
+      .section-header:hover .section-icon {
+        background: rgba(0, 206, 209, 0.15);
+        border-color: rgba(0, 206, 209, 0.3);
+        transform: scale(1.05);
+      }
+
+      .section-icon svg {
+        width: 18px;
+        height: 18px;
+        stroke: var(--cyan);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .section-title {
+        font-size: 17px;
+        font-weight: 500;
+        color: var(--cyan);
+        letter-spacing: 0.2px;
+      }
+
+      .section-content {
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-lg);
+        padding: 28px;
+        transition: var(--transition);
+      }
+
+      .section-content:hover {
+        border-color: var(--border-hover);
+        box-shadow: var(--shadow-glow);
+      }
+
+      .section-content p {
+        font-size: 15px;
+        line-height: 1.8;
+        margin-bottom: 16px;
+        color: var(--text-secondary);
+      }
+
+      .section-content p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* ============================================
+           BULLET POINTS
+           ============================================ */
+      .bullet-list {
+        list-style: none;
+        padding: 0;
+        margin: 12px 0;
+      }
+
+      .bullet-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+        transition: var(--transition);
+      }
+
+      .bullet-item:last-child {
+        border-bottom: none;
+      }
+
+      .bullet-item:hover {
+        transform: translateX(4px);
+      }
+
+      .bullet-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--cyan);
+        margin-top: 9px;
+        flex-shrink: 0;
+        box-shadow: 0 0 8px rgba(0, 206, 209, 0.3);
+      }
+
+      .bullet-text {
+        font-size: 15px;
+        line-height: 1.7;
+        color: var(--text-secondary);
+      }
+
+      .bullet-text strong {
+        color: var(--text-primary);
+        font-weight: 500;
+      }
+
+      /* ============================================
+           CONTACT CARD
+           ============================================ */
+      .contact-card {
+        background: var(--bg-card-hover);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        padding: 24px;
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .contact-name {
+        font-size: 18px;
+        font-weight: 500;
+        color: var(--text-primary);
+        margin-bottom: 4px;
+      }
+
+      .contact-location {
+        font-size: 14px;
+        color: var(--text-tertiary);
+        margin-bottom: 20px;
+      }
+
+      .email-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 28px;
+        background: var(--cyan-light);
+        border: 1px solid var(--cyan-border);
+        border-radius: 50px;
+        text-decoration: none;
+        color: var(--cyan);
+        font-family: var(--font);
+        font-size: 14px;
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .email-btn:hover {
+        background: rgba(0, 206, 209, 0.15);
+        border-color: rgba(0, 206, 209, 0.4);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(0, 206, 209, 0.15);
+      }
+
+      .email-btn svg {
+        width: 16px;
+        height: 16px;
+        stroke: var(--cyan);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      /* ============================================
+           FOOTER
+           ============================================ */
+      .footer {
+        text-align: center;
+        margin-top: 64px;
+        padding-top: 32px;
+        border-top: 1px solid var(--border-subtle);
+      }
+
+      .footer-logo {
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--cyan);
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+      }
+
+      .footer p {
+        font-size: 13px;
+        color: var(--text-tertiary);
+        font-weight: 300;
+      }
+
+      /* ============================================
+           BACK TO TOP BUTTON
+           ============================================ */
+      .back-to-top {
+        position: fixed;
+        bottom: 32px;
+        right: 32px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid var(--border-subtle);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: var(--transition);
+        z-index: 998;
+      }
+
+      .back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .back-to-top:hover {
+        background: rgba(0, 206, 209, 0.15);
+        border-color: var(--cyan-border);
+        transform: translateY(-2px);
+      }
+
+      .back-to-top svg {
+        width: 18px;
+        height: 18px;
+        stroke: var(--text-secondary);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .back-to-top:hover svg {
+        stroke: var(--cyan);
+      }
+
+      /* ============================================
+           ANIMATIONS
+           ============================================ */
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ============================================
+           RESPONSIVE
+           ============================================ */
+      @media (max-width: 768px) {
+        .container {
+          padding: 70px 18px 80px;
+        }
+
+        .lang-switcher {
+          top: 16px;
+          right: 16px;
+        }
+
+        .lang-btn {
+          padding: 7px 14px;
+          font-size: 12px;
+        }
+
+        .toc-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .toc {
+          padding: 24px;
+        }
+
+        .intro-card {
+          padding: 24px;
+        }
+
+        .section-content {
+          padding: 22px;
+        }
+
+        .contact-card {
+          padding: 20px;
+        }
+
+        .back-to-top {
+          bottom: 20px;
+          right: 20px;
+          width: 40px;
+          height: 40px;
+        }
+
+        .header h1 {
+          font-size: 28px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          padding: 60px 14px 60px;
+        }
+
+        .header {
+          margin-bottom: 40px;
+        }
+
+        .section-content {
+          padding: 18px;
+        }
+
+        .bullet-item {
+          gap: 10px;
+        }
+      }
+
+      /* ============================================
+           SELECTION STYLE
+           ============================================ */
+      ::selection {
+        background: rgba(0, 206, 209, 0.25);
+        color: var(--text-primary);
+      }
+
+      /* ============================================
+           SCROLLBAR
+           ============================================ */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      /* ============================================
+           HIDDEN LANGUAGE CONTENT
+           ============================================ */
+      .lang-content {
+        display: none;
+      }
+
+      .lang-content.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background Effects -->
+    <div class="bg-wrapper">
+      <div class="bg-gradient"></div>
+      <div class="bg-noise"></div>
+      <div class="floating-orb floating-orb-1"></div>
+      <div class="floating-orb floating-orb-2"></div>
+      <div class="floating-orb floating-orb-3"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="en" onclick="switchLang('en')">
+        EN
+      </button>
+      <button class="lang-btn" data-lang="fr" onclick="switchLang('fr')">
+        FR
+      </button>
+    </div>
+
+    <!-- Back to Top -->
+    <button
+      class="back-to-top"
+      id="backToTop"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    >
+      <svg viewBox="0 0 24 24">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <!-- ============================================
+         ENGLISH CONTENT
+         ============================================ -->
+    <div class="lang-content active" id="content-en">
+      <div class="container">
+        <!-- Header -->
+        <header class="header">
+          <div class="header-badge">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            <span>Privacy Policy</span>
+          </div>
+          <h1><span>RUHAN</span> Privacy Policy</h1>
+          <div class="last-updated">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Last Updated: February 12, 2026</span>
+          </div>
+        </header>
+
+        <!-- Table of Contents -->
+        <nav class="toc">
+          <div class="toc-title">Contents</div>
+          <div class="toc-grid">
+            <a href="#en-s1" class="toc-link"
+              ><span class="toc-number">1</span>Information Stored Locally</a
+            >
+            <a href="#en-s2" class="toc-link"
+              ><span class="toc-number">2</span>Data Collection</a
+            >
+            <a href="#en-s3" class="toc-link"
+              ><span class="toc-number">3</span>App Tracking</a
+            >
+            <a href="#en-s4" class="toc-link"
+              ><span class="toc-number">4</span>In-App Purchases</a
+            >
+            <a href="#en-s5" class="toc-link"
+              ><span class="toc-number">5</span>Third-Party Services</a
+            >
+            <a href="#en-s6" class="toc-link"
+              ><span class="toc-number">6</span>Location Services</a
+            >
+            <a href="#en-s7" class="toc-link"
+              ><span class="toc-number">7</span>Data Retention & Deletion</a
+            >
+            <a href="#en-s8" class="toc-link"
+              ><span class="toc-number">8</span>Health & Cycle Tracker Data</a
+            >
+            <a href="#en-s9" class="toc-link"
+              ><span class="toc-number">9</span>Children's Privacy</a
+            >
+            <a href="#en-s10" class="toc-link"
+              ><span class="toc-number">10</span>Age Restrictions & Content</a
+            >
+            <a href="#en-s11" class="toc-link"
+              ><span class="toc-number">11</span>Your Rights</a
+            >
+            <a href="#en-s12" class="toc-link"
+              ><span class="toc-number">12</span>Changes to This Policy</a
+            >
+            <a href="#en-s13" class="toc-link"
+              ><span class="toc-number">13</span>Contact Us</a
+            >
+          </div>
+        </nav>
+
+        <!-- Intro Card -->
+        <div class="intro-card">
+          <p>
+            <strong>RUHAN</strong> ("we," "our," or "us") is committed to
+            protecting your privacy. This Privacy Policy explains how we handle
+            your information when you use our mobile application. This app is
+            rated 12+ and contains health-related features including a menstrual
+            cycle tracker. All data is stored locally on your device.
+          </p>
+        </div>
+
+        <!-- Section 1 -->
+        <section class="section" id="en-s1">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+            </div>
+            <h2 class="section-title">1. Information Stored Locally</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              The following data is stored only on your device and is never
+              transmitted to our servers or any third party:
+            </p>
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Location Data:</strong> Used solely to calculate
+                  prayer times and Qibla direction. Your location is never sent
+                  to any server.</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Prayer Time Preferences:</strong> Calculation method,
+                  notifications, and display settings</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Quran Reading Progress:</strong> Bookmarks and last
+                  read position</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Notification Settings:</strong> Prayer alerts and
+                  Ramadan reminders</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Cycle Tracker Data:</strong> Menstrual cycle dates,
+                  symptoms, mood, fertility signs, and lifestyle logs — stored
+                  exclusively on your device, fully encrypted, and never
+                  transmitted to any server or third party</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>App Settings:</strong> Language, theme, and display
+                  preferences</span
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="section" id="en-s2">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h2 class="section-title">2. Data Collection</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              We do not collect, store, or transmit any personal data to
+              external servers. All your information remains on your device.
+              Specifically:
+            </p>
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >No personal data is sent to our servers or any third
+                  party</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >No analytics, tracking, or monitoring tools are used</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >No advertising data is collected — this app contains no
+                  advertisements</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >No health or cycle tracker data is ever transmitted off your
+                  device</span
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="section" id="en-s3">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
+                ></path>
+                <line x1="1" y1="1" x2="23" y2="23"></line>
+              </svg>
+            </div>
+            <h2 class="section-title">3. App Tracking</h2>
+          </div>
+          <div class="section-content">
+            <p>This app does not track you across other apps or websites.</p>
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >No cross-app tracking is performed</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >No advertising identifiers are used</span
+                >
+              </li>
+            </ul>
+            <p>
+              Your activity within the app stays entirely on your device. We do
+              not use Apple's App Tracking Transparency framework because we
+              perform no tracking whatsoever.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="section" id="en-s4">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+            </div>
+            <h2 class="section-title">4. In-App Purchases</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              All payments are processed entirely by Apple through the App Store
+              or by Google through Google Play. We have no involvement in the
+              payment process.
+            </p>
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >We do <strong>NOT</strong> collect or have access to your
+                  payment information, credit card details, or billing
+                  address</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Your purchase history is managed solely by Apple or
+                  Google</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Refunds are subject to Apple's or Google's respective refund
+                  policies</span
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="section" id="en-s5">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+              </svg>
+            </div>
+            <h2 class="section-title">5. Third-Party Services</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              Our App uses the following third-party services solely to deliver
+              Quran content:
+            </p>
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>AlQuran.cloud</strong> — Quran text and
+                  translations</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>MP3Quran.net</strong> — Surah audio recitations</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>EveryAyah.com</strong> — Verse-by-verse audio
+                  recitations</span
+                >
+              </li>
+            </ul>
+            <p>
+              These services only deliver content to your device. No personal
+              data, health data, location data, or identifying information is
+              sent to these services. We encourage you to review the privacy
+              policies of these third-party services.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 6 -->
+        <section class="section" id="en-s6">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h2 class="section-title">6. Location Services</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              The App requests location access for the following purposes only:
+            </p>
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Calculate accurate prayer times based on your geographic
+                  position</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Determine the Qibla direction (direction of Mecca)</span
+                >
+              </li>
+            </ul>
+            <p>
+              Your location data is processed entirely on your device and is
+              never transmitted to any server or third party. Location access is
+              optional and can be disabled at any time through your device
+              settings.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 7 -->
+        <section class="section" id="en-s7">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path
+                  d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="section-title">7. Data Retention & Deletion</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              Since all data is stored locally on your device, you have full
+              control over your data at all times:
+            </p>
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Uninstalling the App permanently deletes all associated data
+                  including cycle tracker data, bookmarks, and settings</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >You can clear all App data at any time through your device
+                  settings without uninstalling</span
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 8 -->
+        <section class="section" id="en-s8">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="section-title">8. Health & Cycle Tracker Data</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              Our App includes a menstrual cycle tracker feature that allows
+              users to log cycle dates, symptoms, mood, fertility signs, and
+              lifestyle information. This section explains how we handle this
+              sensitive health data:
+            </p>
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >All health and cycle data is stored exclusively on your
+                  device using local encrypted storage</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >No health data is ever transmitted to our servers, third
+                  parties, or any external service</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >No health data is used for advertising, marketing, data
+                  mining, or any purpose other than providing the cycle tracker
+                  feature to you on your device</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >We do not integrate with Apple HealthKit, Google Fit, or any
+                  other external health platform</span
+                >
+              </li>
+            </ul>
+            <p>
+              The cycle tracker is provided for informational and personal
+              tracking purposes only. It is not intended as a medical device,
+              contraceptive tool, or substitute for professional medical advice.
+              Predictions are estimates and should not be relied upon for
+              medical decisions. Always consult a qualified healthcare provider
+              for medical concerns.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 9 -->
+        <section class="section" id="en-s9">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h2 class="section-title">9. Children's Privacy</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              Our App is rated 12+ and is designed for general audiences. It is
+              not specifically targeted at children. The App contains
+              health-related content including menstrual cycle tracking and
+              fertility information that may not be suitable for children under
+              12. We do not knowingly collect, store, or process any personal
+              information from children under the age of 13 (or under 16 in the
+              European Economic Area). Since our App stores all data locally on
+              the user's device and does not collect or transmit any personal
+              data to external servers, no children's data is collected by us.
+              If you are a parent or guardian and believe that your child has
+              somehow provided us with personal information, please contact us
+              at
+              <a
+                href="mailto:ruhanpro@proton.me"
+                style="color: var(--cyan); text-decoration: none"
+                >ruhanpro@proton.me</a
+              >
+              and we will take immediate steps to address your concerns. We
+              comply with the Children's Online Privacy Protection Act (COPPA),
+              the General Data Protection Regulation (GDPR), and all other
+              applicable laws regarding children's privacy.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 10 -->
+        <section class="section" id="en-s10">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                ></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+            </div>
+            <h2 class="section-title">10. Age Restrictions & Content</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              This App is rated 12+ on the Apple App Store and equivalent
+              ratings on other platforms. The App contains Islamic religious
+              content suitable for all ages, as well as health and reproductive
+              content (menstrual cycle tracker, fertility tracking, symptom
+              logging) that is intended for users aged 12 and older. The cycle
+              tracker feature includes references to menstrual health,
+              fertility, ovulation, and related reproductive health topics.
+              Parents and guardians are encouraged to review the App's content
+              and determine its appropriateness for their children. By using
+              this App, you confirm that you are at least 12 years of age, or
+              that you are using the App under the supervision of a parent or
+              guardian.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 11 -->
+        <section class="section" id="en-s11">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <h2 class="section-title">11. Your Rights</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              Under the General Data Protection Regulation (GDPR), the
+              California Consumer Privacy Act (CCPA), and other applicable
+              privacy laws, you have the following rights:
+            </p>
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Right to Access:</strong> All your data is stored
+                  locally on your device and is directly accessible to you at
+                  any time</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Right to Deletion:</strong> You can delete all your
+                  data by uninstalling the App or clearing App data in your
+                  device settings</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Right to Control:</strong> You can enable or disable
+                  location permissions at any time through your device
+                  settings</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Right to Information:</strong> This Privacy Policy
+                  provides complete transparency about how the App handles your
+                  data</span
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 12 -->
+        <section class="section" id="en-s12">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                ></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <h2 class="section-title">12. Changes to This Privacy Policy</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              We may update this Privacy Policy from time to time to reflect
+              changes in our practices or for legal, regulatory, or operational
+              reasons. Any changes will be reflected within the App with an
+              updated "Last Updated" date at the top of this page. We encourage
+              you to review this Privacy Policy periodically. Your continued use
+              of the App after any changes constitutes your acceptance of the
+              updated Privacy Policy. If we make any material changes to how we
+              handle your data, we will provide prominent notice within the App.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 13 -->
+        <section class="section" id="en-s13">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <h2 class="section-title">13. Contact Us</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              If you have any questions, concerns, or requests regarding this
+              Privacy Policy, your data, or our privacy practices, please
+              contact us. This policy is governed by the laws of Luxembourg and
+              the European Union. We aim to respond to all inquiries within 48
+              hours.
+            </p>
+            <div class="contact-card">
+              <div class="contact-name">RUHAN</div>
+              <div class="contact-location">Luxembourg</div>
+              <a href="mailto:ruhanpro@proton.me" class="email-btn">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                ruhanpro@proton.me
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="footer-logo">RUHAN</div>
+          <p>© <span id="year-en"></span> RUHAN. All rights reserved.</p>
+        </footer>
+      </div>
+    </div>
+
+    <!-- ============================================
+         FRENCH CONTENT
+         ============================================ -->
+    <div class="lang-content" id="content-fr">
+      <div class="container">
+        <!-- Header -->
+        <header class="header">
+          <div class="header-badge">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            <span>Politique de Confidentialité</span>
+          </div>
+          <h1><span>RUHAN</span> Politique de Confidentialité</h1>
+          <div class="last-updated">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <span>Dernière mise à jour : 12 février 2026</span>
+          </div>
+        </header>
+
+        <!-- Table of Contents -->
+        <nav class="toc">
+          <div class="toc-title">Sommaire</div>
+          <div class="toc-grid">
+            <a href="#fr-s1" class="toc-link"
+              ><span class="toc-number">1</span>Informations Stockées
+              Localement</a
+            >
+            <a href="#fr-s2" class="toc-link"
+              ><span class="toc-number">2</span>Collecte de Données</a
+            >
+            <a href="#fr-s3" class="toc-link"
+              ><span class="toc-number">3</span>Suivi de l'Application</a
+            >
+            <a href="#fr-s4" class="toc-link"
+              ><span class="toc-number">4</span>Achats Intégrés</a
+            >
+            <a href="#fr-s5" class="toc-link"
+              ><span class="toc-number">5</span>Services Tiers</a
+            >
+            <a href="#fr-s6" class="toc-link"
+              ><span class="toc-number">6</span>Services de Localisation</a
+            >
+            <a href="#fr-s7" class="toc-link"
+              ><span class="toc-number">7</span>Conservation et Suppression</a
+            >
+            <a href="#fr-s8" class="toc-link"
+              ><span class="toc-number">8</span>Données de Santé et Cycle</a
+            >
+            <a href="#fr-s9" class="toc-link"
+              ><span class="toc-number">9</span>Confidentialité des Enfants</a
+            >
+            <a href="#fr-s10" class="toc-link"
+              ><span class="toc-number">10</span>Restrictions d'Âge et
+              Contenu</a
+            >
+            <a href="#fr-s11" class="toc-link"
+              ><span class="toc-number">11</span>Vos Droits</a
+            >
+            <a href="#fr-s12" class="toc-link"
+              ><span class="toc-number">12</span>Modifications de la
+              Politique</a
+            >
+            <a href="#fr-s13" class="toc-link"
+              ><span class="toc-number">13</span>Nous Contacter</a
+            >
+          </div>
+        </nav>
+
+        <!-- Intro Card -->
+        <div class="intro-card">
+          <p>
+            <strong>RUHAN</strong> (« nous », « notre ») s'engage à protéger
+            votre vie privée. Cette politique de confidentialité explique
+            comment nous gérons vos informations lorsque vous utilisez notre
+            application mobile. Cette application est classée 12+ et contient
+            des fonctionnalités liées à la santé, y compris un suivi du cycle
+            menstruel. Toutes les données sont stockées localement sur votre
+            appareil.
+          </p>
+        </div>
+
+        <!-- Section 1 -->
+        <section class="section" id="fr-s1">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+            </div>
+            <h2 class="section-title">1. Informations Stockées Localement</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              Les données suivantes sont stockées uniquement sur votre appareil
+              et ne sont jamais transmises à nos serveurs ni à aucun tiers :
+            </p>
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Données de localisation :</strong> Utilisées
+                  uniquement pour calculer les heures de prière et la direction
+                  de la Qibla. Votre position n'est jamais envoyée à un
+                  serveur.</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Préférences des heures de prière :</strong> Méthode
+                  de calcul, notifications et paramètres d'affichage</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Progression de lecture du Coran :</strong> Signets et
+                  dernière position de lecture</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Paramètres de notification :</strong> Alertes de
+                  prière et rappels du Ramadan</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Données du suivi de cycle :</strong> Dates du cycle
+                  menstruel, symptômes, humeur, signes de fertilité et journaux
+                  de mode de vie — stockées exclusivement sur votre appareil,
+                  entièrement cryptées et jamais transmises à un serveur ou
+                  tiers</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Paramètres de l'application :</strong> Langue, thème
+                  et préférences d'affichage</span
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="section" id="fr-s2">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h2 class="section-title">2. Collecte de Données</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              Nous ne collectons, ne stockons ni ne transmettons aucune donnée
+              personnelle à des serveurs externes. Toutes vos informations
+              restent sur votre appareil. Plus précisément :
+            </p>
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Aucune donnée personnelle n'est envoyée à nos serveurs ou à
+                  un tiers</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Aucun outil d'analyse, de suivi ou de surveillance n'est
+                  utilisé</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Aucune donnée publicitaire n'est collectée — cette
+                  application ne contient aucune publicité</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Aucune donnée de santé ou du suivi de cycle n'est jamais
+                  transmise hors de votre appareil</span
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="section" id="fr-s3">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
+                ></path>
+                <line x1="1" y1="1" x2="23" y2="23"></line>
+              </svg>
+            </div>
+            <h2 class="section-title">3. Suivi de l'Application</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              Cette application ne vous suit pas à travers d'autres applications
+              ou sites web.
+            </p>
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Aucun suivi inter-applications n'est effectué</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Aucun identifiant publicitaire n'est utilisé</span
+                >
+              </li>
+            </ul>
+            <p>
+              Votre activité au sein de l'application reste entièrement sur
+              votre appareil. Nous n'utilisons pas le cadre App Tracking
+              Transparency d'Apple car nous n'effectuons aucun suivi.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="section" id="fr-s4">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+            </div>
+            <h2 class="section-title">4. Achats Intégrés</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              Tous les paiements sont traités entièrement par Apple via l'App
+              Store ou par Google via Google Play. Nous n'avons aucune
+              implication dans le processus de paiement.
+            </p>
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Nous <strong>NE collectons PAS</strong> et n'avons pas accès
+                  à vos informations de paiement, détails de carte de crédit ou
+                  adresse de facturation</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Votre historique d'achats est géré uniquement par Apple ou
+                  Google</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Les remboursements sont soumis aux politiques de
+                  remboursement respectives d'Apple ou de Google</span
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="section" id="fr-s5">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+              </svg>
+            </div>
+            <h2 class="section-title">5. Services Tiers</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              Notre application utilise les services tiers suivants uniquement
+              pour livrer le contenu coranique :
+            </p>
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>AlQuran.cloud</strong> — Texte et traductions du
+                  Coran</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>MP3Quran.net</strong> — Récitations audio des
+                  sourates</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>EveryAyah.com</strong> — Récitations audio verset par
+                  verset</span
+                >
+              </li>
+            </ul>
+            <p>
+              Ces services ne font que livrer du contenu à votre appareil.
+              Aucune donnée personnelle, donnée de santé, donnée de localisation
+              ou information d'identification n'est envoyée à ces services. Nous
+              vous encourageons à consulter les politiques de confidentialité de
+              ces services tiers.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 6 -->
+        <section class="section" id="fr-s6">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h2 class="section-title">6. Services de Localisation</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              L'application demande l'accès à la localisation uniquement pour
+              les raisons suivantes :
+            </p>
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Calculer des heures de prière précises basées sur votre
+                  position géographique</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Déterminer la direction de la Qibla (direction de la
+                  Mecque)</span
+                >
+              </li>
+            </ul>
+            <p>
+              Vos données de localisation sont traitées entièrement sur votre
+              appareil et ne sont jamais transmises à un serveur ou tiers.
+              L'accès à la localisation est facultatif et peut être désactivé à
+              tout moment via les paramètres de votre appareil.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 7 -->
+        <section class="section" id="fr-s7">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path
+                  d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="section-title">
+              7. Conservation et Suppression des Données
+            </h2>
+          </div>
+          <div class="section-content">
+            <p>
+              Puisque toutes les données sont stockées localement sur votre
+              appareil, vous avez un contrôle total sur vos données à tout
+              moment :
+            </p>
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >La désinstallation de l'application supprime définitivement
+                  toutes les données associées, y compris les données du suivi
+                  de cycle, les signets et les paramètres</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Vous pouvez effacer toutes les données de l'application à
+                  tout moment via les paramètres de votre appareil sans
+                  désinstaller</span
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 8 -->
+        <section class="section" id="fr-s8">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="section-title">
+              8. Données de Santé et du Suivi de Cycle
+            </h2>
+          </div>
+          <div class="section-content">
+            <p>
+              Notre application comprend une fonctionnalité de suivi du cycle
+              menstruel qui permet aux utilisatrices d'enregistrer les dates du
+              cycle, les symptômes, l'humeur, les signes de fertilité et les
+              informations de mode de vie. Cette section explique comment nous
+              gérons ces données de santé sensibles :
+            </p>
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Toutes les données de santé et du cycle sont stockées
+                  exclusivement sur votre appareil en utilisant un stockage
+                  local crypté</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Aucune donnée de santé n'est jamais transmise à nos serveurs,
+                  à des tiers ou à un service externe</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Aucune donnée de santé n'est utilisée pour la publicité, le
+                  marketing, l'exploration de données ou tout autre but que de
+                  vous fournir la fonctionnalité de suivi de cycle sur votre
+                  appareil</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  >Nous ne nous intégrons pas à Apple HealthKit, Google Fit ou
+                  toute autre plateforme de santé externe</span
+                >
+              </li>
+            </ul>
+            <p>
+              Le suivi de cycle est fourni à des fins d'information et de suivi
+              personnel uniquement. Il n'est pas destiné à être un dispositif
+              médical, un outil de contraception ou un substitut à un avis
+              médical professionnel. Les prédictions sont des estimations et ne
+              doivent pas être utilisées pour des décisions médicales. Consultez
+              toujours un professionnel de santé qualifié pour toute
+              préoccupation médicale.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 9 -->
+        <section class="section" id="fr-s9">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h2 class="section-title">9. Confidentialité des Enfants</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              Notre application est classée 12+ et est conçue pour un public
+              général. Elle n'est pas spécifiquement destinée aux enfants.
+              L'application contient du contenu lié à la santé, y compris le
+              suivi du cycle menstruel et des informations sur la fertilité, qui
+              peut ne pas être adapté aux enfants de moins de 12 ans. Nous ne
+              collectons, ne stockons ni ne traitons sciemment aucune
+              information personnelle d'enfants de moins de 13 ans (ou de moins
+              de 16 ans dans l'Espace Économique Européen). Étant donné que
+              notre application stocke toutes les données localement sur
+              l'appareil de l'utilisateur et ne collecte ni ne transmet aucune
+              donnée personnelle vers des serveurs externes, aucune donnée
+              d'enfant n'est collectée par nous. Si vous êtes un parent ou un
+              tuteur et que vous pensez que votre enfant nous a fourni des
+              informations personnelles, veuillez nous contacter à
+              <a
+                href="mailto:ruhanpro@proton.me"
+                style="color: var(--cyan); text-decoration: none"
+                >ruhanpro@proton.me</a
+              >
+              et nous prendrons des mesures immédiates pour répondre à vos
+              préoccupations. Nous respectons le Children's Online Privacy
+              Protection Act (COPPA), le Règlement Général sur la Protection des
+              Données (RGPD) et toutes les autres lois applicables relatives à
+              la confidentialité des enfants.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 10 -->
+        <section class="section" id="fr-s10">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                ></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+            </div>
+            <h2 class="section-title">10. Restrictions d'Âge et Contenu</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              Cette application est classée 12+ sur l'Apple App Store et des
+              classifications équivalentes sur les autres plateformes.
+              L'application contient du contenu religieux islamique adapté à
+              tous les âges, ainsi que du contenu de santé et reproductif (suivi
+              du cycle menstruel, suivi de la fertilité, enregistrement des
+              symptômes) destiné aux utilisateurs de 12 ans et plus. La
+              fonctionnalité de suivi du cycle comprend des références à la
+              santé menstruelle, la fertilité, l'ovulation et d'autres sujets de
+              santé reproductive. Les parents et tuteurs sont encouragés à
+              examiner le contenu de l'application et à déterminer son
+              adéquation pour leurs enfants. En utilisant cette application,
+              vous confirmez que vous avez au moins 12 ans, ou que vous utilisez
+              l'application sous la supervision d'un parent ou d'un tuteur.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 11 -->
+        <section class="section" id="fr-s11">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+            <h2 class="section-title">11. Vos Droits</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              En vertu du Règlement Général sur la Protection des Données
+              (RGPD), du California Consumer Privacy Act (CCPA) et d'autres lois
+              applicables sur la confidentialité, vous disposez des droits
+              suivants :
+            </p>
+            <ul class="bullet-list">
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Droit d'accès :</strong> Toutes vos données sont
+                  stockées localement sur votre appareil et vous sont
+                  directement accessibles à tout moment</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Droit à la suppression :</strong> Vous pouvez
+                  supprimer toutes vos données en désinstallant l'application ou
+                  en effaçant les données de l'application dans les paramètres
+                  de votre appareil</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Droit de contrôle :</strong> Vous pouvez activer ou
+                  désactiver les permissions de localisation à tout moment via
+                  les paramètres de votre appareil</span
+                >
+              </li>
+              <li class="bullet-item">
+                <div class="bullet-dot"></div>
+                <span class="bullet-text"
+                  ><strong>Droit à l'information :</strong> Cette politique de
+                  confidentialité fournit une transparence complète sur la
+                  manière dont l'application gère vos données</span
+                >
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 12 -->
+        <section class="section" id="fr-s12">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                ></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <h2 class="section-title">
+              12. Modifications de Cette Politique de Confidentialité
+            </h2>
+          </div>
+          <div class="section-content">
+            <p>
+              Nous pouvons mettre à jour cette politique de confidentialité de
+              temps à autre pour refléter les changements dans nos pratiques ou
+              pour des raisons légales, réglementaires ou opérationnelles. Toute
+              modification sera reflétée dans l'application avec une date de «
+              Dernière mise à jour » actualisée en haut de cette page. Nous vous
+              encourageons à consulter régulièrement cette politique de
+              confidentialité. Votre utilisation continue de l'application après
+              toute modification constitue votre acceptation de la politique de
+              confidentialité mise à jour. Si nous apportons des modifications
+              importantes à la manière dont nous gérons vos données, nous
+              fournirons un avis visible dans l'application.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 13 -->
+        <section class="section" id="fr-s13">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <h2 class="section-title">13. Nous Contacter</h2>
+          </div>
+          <div class="section-content">
+            <p>
+              Si vous avez des questions, des préoccupations ou des demandes
+              concernant cette politique de confidentialité, vos données ou nos
+              pratiques de confidentialité, veuillez nous contacter. Cette
+              politique est régie par les lois du Luxembourg et de l'Union
+              Européenne. Nous nous efforçons de répondre à toutes les demandes
+              dans un délai de 48 heures.
+            </p>
+            <div class="contact-card">
+              <div class="contact-name">RUHAN</div>
+              <div class="contact-location">Luxembourg</div>
+              <a href="mailto:ruhanpro@proton.me" class="email-btn">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                ruhanpro@proton.me
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="footer-logo">RUHAN</div>
+          <p>© <span id="year-fr"></span> RUHAN. Tous droits réservés.</p>
+        </footer>
+      </div>
+    </div>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+      // Year
+      const currentYear = new Date().getFullYear();
+      document.getElementById("year-en").textContent = currentYear;
+      document.getElementById("year-fr").textContent = currentYear;
+
+      // Language Switcher
+      function switchLang(lang) {
+        document
+          .querySelectorAll(".lang-content")
+          .forEach((el) => el.classList.remove("active"));
+        document
+          .querySelectorAll(".lang-btn")
+          .forEach((el) => el.classList.remove("active"));
+        document.getElementById("content-" + lang).classList.add("active");
+        document
+          .querySelector('.lang-btn[data-lang="' + lang + '"]')
+          .classList.add("active");
+        document.documentElement.lang = lang;
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        // Re-observe sections after switch
+        setTimeout(() => {
+          document
+            .querySelectorAll("#content-" + lang + " .section")
+            .forEach((section) => {
+              sectionObserver.observe(section);
+            });
+        }, 100);
+      }
+
+      // Scroll Progress Bar
+      window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY;
+        const docHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const progress = (scrollTop / docHeight) * 100;
+        document.getElementById("scrollProgress").style.width = progress + "%";
+
+        // Back to top button
+        const btn = document.getElementById("backToTop");
+        if (scrollTop > 400) {
+          btn.classList.add("visible");
+        } else {
+          btn.classList.remove("visible");
+        }
+      });
+
+      // Intersection Observer for section animations
+      const sectionObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              sectionObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+      );
+
+      document.querySelectorAll(".section").forEach((section) => {
+        sectionObserver.observe(section);
+      });
+
+      // Smooth scroll for TOC links
+      document.querySelectorAll(".toc-link").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const target = document.querySelector(link.getAttribute("href"));
+          if (target) {
+            const offset = 20;
+            const top =
+              target.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top, behavior: "smooth" });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
